@@ -5,7 +5,7 @@
 
 for drives in a b c d e f g h 
 do
-	rdisk=`echo sda$drives`
+	rdisk=`echo sd$drives`
 	dd if=/dev/$rdisk bs=512 skip=0 count=1 > check.txt 2> /dev/null
 	
 	if grep -q BENNVENN check.txt ; then
