@@ -1,7 +1,11 @@
+#!/bin/bash
 
-for drives in 1 2 3 4 5 6 7 8 
+# Terminal script to flash using Joey Jr from linux
+
+
+for drives in a b c d e f g h 
 do
-	rdisk=`echo rdisk$drives`
+	rdisk=`echo sda$drives`
 	dd if=/dev/$rdisk bs=512 skip=0 count=1 > check.txt 2> /dev/null
 	
 	if grep -q BENNVENN check.txt ; then
